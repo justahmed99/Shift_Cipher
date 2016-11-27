@@ -7,7 +7,6 @@
 using namespace std;
 
 int mod(int x, int y);
-void upper_casting(char input[]);
 void encryption(char input[], int key);
 void decryption(char input[], int key);
 
@@ -53,17 +52,9 @@ int main() {
 	return 0;
 }
 
+//Used Functions
 int mod(int x, int y) {
 	return ((x % y) + y) % y;
-}
-void upper_casting(char input[]) {
-	int i = 0;
-	while (input[i] != '\0') {
-		if(input[i] >= 'a' && input[i] <= 'z') {
-			input[i] -= 32;
-		}
-		i++;
-	}
 }
 void encryption(char input[], int key) {
 	for(int i = 0; i < 200; i++) {
