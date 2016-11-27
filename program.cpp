@@ -11,14 +11,17 @@ void encryption(char input[], int key);
 void decryption(char input[], int key);
 
 int main() {
-	string temp;		//For print the file
-	string dir;			//For input the directory of file
-	ifstream myfile;	//Reading file
+	string temp = "";		//For print the file
+	string dir = "";		//For input the directory of file
+	ifstream myfile;		//Reading file
+	int key = 0;			//Key for encryption and decryption
 
 	cout << "Shift Cipher" << endl << endl;
 
 	cout << "Input file location : ";
 	getline(cin, dir);
+	cout << "Input key : ";
+	cin >> key;
 
 
 	myfile.open (dir.c_str());
@@ -42,11 +45,11 @@ int main() {
 	cout << endl;
 
 	cout << "Encryption result : "  << endl;
-	encryption(c, 2);
+	encryption(c, key);
 	cout << c;
 	cout << endl;
 	cout << "Decryption result : " << endl;
-	decryption(c, 2);
+	decryption(c, key);
 	cout << c;
 	cout << endl;
 	return 0;
